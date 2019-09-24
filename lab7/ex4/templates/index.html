@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student Management</title>
+  </head>
+  <body align="center">
+
+    <h1>Students</h1>
+    <form action="/" method="get">
+      <input type="text" name="q" value="">
+      <input type="submit" value="Search Students">
+    </form>
+    <br/>
+    <table align="center" border=1>
+      <tr>
+        <th>Name</th> <th>CGPA</th>
+      </tr>
+    {% for row in studentRows %}
+      <tr>
+        <td>{{row[1]}}</td> <td>{{row[2]}}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    <h1>Courses Available Now</h1>
+    <table align="center" border=1>
+      <tr>
+        <th>Name</th> <th>CGPA</th>
+      </tr>
+    {% for row in courseRows %}
+      <tr>
+        <td>{{row[0]}}</td> <td>{{row[1]}}</td>
+      </tr>
+    {% endfor %}
+    </table>
+
+  </body>
+</html>
